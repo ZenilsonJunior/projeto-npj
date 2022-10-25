@@ -1,9 +1,9 @@
 from django.urls import path
 
-from legal.views import home, login, registro
+from . import views
 
 urlpatterns = [
-    path('', login),
-    path('home', home),
-    path('registro', registro),
+    path('', views.login, name="legal-login"),
+    path('home/', views.home, name="legal-home"),
+    path('registro/', views.registro, name="legal-registro"),
 ]
