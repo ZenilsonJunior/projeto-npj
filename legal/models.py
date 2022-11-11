@@ -5,6 +5,7 @@ from django.db import models
 # Create your models here.
 
 
-class carla(models.Model):
-    id = models.IntegerField(primary_key=True)
+class User(models.Model):
+    username = models.IntegerField(primary_key=True)
+    email = models.EmailField
     senha = models.CharField(max_length=10)

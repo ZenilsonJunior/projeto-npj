@@ -13,20 +13,23 @@
 			<h1>Faça login<br>e tenha acesso ao sistema do NPJ</h1>
 			<img src="{% static 'img/uni.png' %}" class="img-login">
 		</div>
+		<form action="{% url 'login' %}" method="POST">
+			{% csrf_token %}
 		<div class="right-login">
 			<div class="card-login">
 				<h1>LOGIN</h1>
 				<div class="textfield">
 					<label for="usuario">Usuário</label>
-					<input type="text" name="usuario" placeholder="Usuário">
+					<input type="text" name="username" placeholder="Usuário">
 				</div>
 				<div class="textfield">
 					<label for="senha">Senha</label>
-					<input type="password" name="Senha" placeholder="Senha">
+					<input type="password" name="senha" placeholder="Senha">
 				</div>
 				<a href="{% url 'home' %}"><button class="btn-login">Login</button> </a>
 			</div>
 		</div>
+		</form>
 	</div>
 </body>
 </html>
