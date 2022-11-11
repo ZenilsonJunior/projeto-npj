@@ -12,7 +12,7 @@
     <div class="form__container">
         <h3>CADASTRO DE CLIENTES</h3>
         <div class="form__register">
-        <form action"{% url 'home' %}">
+        <form action"{% url 'home' %}" method="POST">
             {% csrf_token %}
         <div class="form__content">
             <div class="form__left">
