@@ -12,8 +12,8 @@
     <div class="form__container">
         <h3>CADASTRO DE CLIENTES</h3>
         <div class="form__register">
-        <form action"{% url 'home' %}" method="POST">
-            {% csrf_token %}
+    <form action="{% url 'form' %}" method="POST">
+        {% csrf_token %}
         <div class="form__content">
             <div class="form__left">
                 <div class="form-group">
@@ -36,9 +36,9 @@
                     <label for="">Data de nascimento</label>
                     <input 
                         id="data" 
-                        type="date" 
+                        type="data" 
                         class="form-control form__input" 
-                        name="data"
+                        name="dt_nasc"
                     >
                     <label for="">CPF</label>
                     <input 
@@ -57,7 +57,7 @@
                 </div>
                 <div class="form-group">
                 <label for="">Gênero</label>
-                <select class="form-control form__input" id="sexo" value="">
+                <select class="form-control form__input" id="sexo" name="genero" value="">
                         <option value="">Selecione</option>
                         <option value="feminino">Feminino</option>
                         <option value="masculino">Masculino</option>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Estado civil</label>
-                    <select class="form-control form__input" id="estado-civil" value="">
+                    <select class="form-control form__input" id="estado-civil" name="estado_civil" value="">
                         <option value="">Selecione</option>
                         <option value="solteiro">Solteiro</option>
                         <option value="casado">Casado</option>
@@ -80,7 +80,7 @@
                         class="form-control form__input" 
                         id="og" 
                         type="text" 
-                        name="og"
+                        name="orgao_emissor"
                         >
                 </div>    
                 </div>
@@ -93,12 +93,12 @@
                         type="currency" 
                         class="form-control form__input" 
                         placeholder="Digite seu sobrenome"
-                        name="renda"
+                        name="renda_mensal"
                         value=""
                     >
                     <label for="">E-mail</label>
                     <input 
-                        id="data" 
+                        id="email" 
                         type="email" 
                         class="form-control form__input" 
                         name="email"
@@ -116,7 +116,7 @@
                     <input 
                     id="tel"
                     type="number" 
-                    name="tel"
+                    name="tel2"
                     class="form-control form__input">
                 </div>
                 <div class="form-group">
@@ -126,7 +126,7 @@
                         type="text" 
                         class="form-control form__input" 
                         placeholder="Digite seu sobrenome"
-                        name="end"
+                        name="endereco"
                         value=""
                     >
                     <label for="">Número</label>
@@ -134,7 +134,7 @@
                         id="num" 
                         type="number" 
                         class="form-control form__input" 
-                        name="num"
+                        name="numero"
                         id="num"
                         value=""
                     >
@@ -143,7 +143,7 @@
                         id="comp" 
                         type="text" 
                         class="form-control form__input" 
-                        name="comp"
+                        name="complemento"
                     >
                     <label for="">Cidade</label>
                     <input 
@@ -175,7 +175,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">UF</label>
-                    <select id="uf" class="form-control form__input">
+                    <select id="uf" class="form-control form__input" name="uf">
                         <option id="" value="">Selecione</option>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
@@ -207,40 +207,40 @@
                     </select>
                 </div>
                 <p>Área</p>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="" id="" value="option1">
+                <div class="form-check form-check-inline" name="area">
+                    <input class="form-check-input" type="checkbox" name="area" id="" value="option1">
                     <label class="form-check-label" for="exampleRadios1">
                         Civil
                     </label>
                 </div> 
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="" id="" value="option2">
+                    <input class="form-check-input" type="checkbox" name="area" id="" value="option2">
                     <label class="form-check-label" for="">
                         Família
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="" id=" "value="option3">
+                    <input class="form-check-input" type="checkbox" name="area" id=" "value="option3">
                     <label class="form-check-label" for="">
                         Penal
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="" id="" value="option4">
+                    <input class="form-check-input" type="checkbox" name="area" id="" value="option4">
                     <label class="form-check-label" for="">
                         Trabalhista
                     </label>
                 </div>
                 <p>Observações</p>
                 <div class="">
-                    <textarea style="resize: none" cols="40" rows="5"></textarea>
+                    <textarea style="resize: none" cols="40" rows="5" name"obs"></textarea>
                 </div>
                 <div class="">
-                    <button class="form__button">Enviar</button>
+                    <button class="form__button" type"submit">Enviar</button>
                 </div>
             </div>
         </div>
-        </form>
+    </form>
     </div>
     </div>
 

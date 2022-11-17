@@ -5,6 +5,8 @@ from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
+from .forms import formularioCadastro
+
 
 @csrf_exempt
 def login(request):
@@ -36,7 +38,10 @@ def tables(request):
 
 @csrf_exempt
 def form(request):
-    return render(request, 'legal/form.html')
+    form = formularioCadastro(request.POST)
+    if form.is_valid():
+        form.save
+    return render(request, 'legal/form.html', {'form': form})
 
 
 @csrf_exempt
